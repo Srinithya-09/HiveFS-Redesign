@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generate Article Images</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; background: #f5f5f5; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .image-card { 
+            background: white; 
+            border-radius: 8px; 
+            padding: 20px; 
+            margin: 10px 0; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        canvas { border: 1px solid #ddd; border-radius: 4px; }
+        button { 
+            background: #8b7d3a; 
+            color: white; 
+            border: none; 
+            padding: 10px 15px; 
+            border-radius: 4px; 
+            cursor: pointer; 
+            margin: 5px;
+        }
+        button:hover { background: #b5a44e; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Generate Article Cover Images</h1>
+        <p>Click each button to download the image, then place in public/images/ folder</p>
+        
+        <div class="image-card">
+            <h3>The Curator's Gambit</h3>
+            <canvas id="canvas1" width="800" height="600"></canvas>
+            <br>
+            <button onclick="downloadImage('canvas1', 'curators-gambit')">Download Image</button>
+        </div>
+
+        <div class="image-card">
+            <h3>Clark Dean Georgia</h3>
+            <canvas id="canvas2" width="800" height="600"></canvas>
+            <br>
+            <button onclick="downloadImage('canvas2', 'clark-dean-georgia')">Download Image</button>
+        </div>
+
+        <div class="image-card">
+            <h3>Jamie Dimon Atlanta</h3>
+            <canvas id="canvas3" width="800" height="600"></canvas>
+            <br>
+            <button onclick="downloadImage('canvas3', 'jamie-dimon-atlanta')">Download Image</button>
+        </div>
+
+        <div class="image-card">
+            <h3>PEACH Values Framework</h3>
+            <canvas id="canvas4" width="800" height="600"></canvas>
+            <br>
+            <button onclick="downloadImage('canvas4', 'peach-values-framework')">Download Image</button>
+        </div>
+
+        <div class="image-card">
+            <h3>Deep Work Day Framework</h3>
+            <canvas id="canvas5" width="800" height="600"></canvas>
+            <br>
+            <button onclick="downloadImage('canvas5', 'deep-work-day-framework')">Download Image</button>
+        </div>
+
+        <div class="image-card">
+            <h3>H-1B Labor Market Signals</h3>
+            <canvas id="canvas6" width="800" height="600"></canvas>
+            <br>
+            <button onclick="downloadImage('canvas6', 'h1b-labor-market-signals')">Download Image</button>
+        </div>
+
+        <div class="image-card">
+            <h3>Lenders Labor Market</h3>
+            <canvas id="canvas7" width="800" height="600"></canvas>
+            <br>
+            <button onclick="downloadImage('canvas7', 'lenders-labor-market')">Download Image</button>
+        </div>
+
+        <div class="image-card">
+            <h3>Middle Class Mirage</h3>
+            <canvas id="canvas8" width="800" height="600"></canvas>
+            <br>
+            <button onclick="downloadImage('canvas8', 'middle-class-mirage')">Download Image</button>
+        </div>
+
+        <div class="image-card">
+            <h3>China Deflationary Crisis</h3>
+            <canvas id="canvas9" width="800" height="600"></canvas>
+            <br>
+            <button onclick="downloadImage('canvas9', 'china-deflationary-crisis')">Download Image</button>
+        </div>
+
+        <div class="image-card">
+            <h3>Quantum-AI Convergence</h3>
+            <canvas id="canvas10" width="800" height="600"></canvas>
+            <br>
+            <button onclick="downloadImage('canvas10', 'quantum-ai-convergence')">Download Image</button>
+        </div>
+
+        <div class="image-card">
+            <h3>Rethinking AI Agent Architecture</h3>
+            <canvas id="canvas11" width="800" height="600"></canvas>
+            <br>
+            <button onclick="downloadImage('canvas11', 'rethinking-ai-agent-architecture')">Download Image</button>
+        </div>
+
+        <div class="image-card">
+            <h3>AI Search Optimization</h3>
+            <canvas id="canvas12" width="800" height="600"></canvas>
+            <br>
+            <button onclick="downloadImage('canvas12', 'ai-search-optimization')">Download Image</button>
+        </div>
+
+        <div class="image-card">
+            <h3>Private Credit Democratization</h3>
+            <canvas id="canvas13" width="800" height="600"></canvas>
+            <br>
+            <button onclick="downloadImage('canvas13', 'private-credit-democratization')">Download Image</button>
+        </div>
+
+        <div class="image-card">
+            <h3>Godfather of AI Warning</h3>
+            <canvas id="canvas14" width="800" height="600"></canvas>
+            <br>
+            <button onclick="downloadImage('canvas14', 'godfather-of-ai-warning')">Download Image</button>
+        </div>
+
+        <div class="image-card">
+            <h3>Fluid Intelligence</h3>
+            <canvas id="canvas15" width="800" height="600"></canvas>
+            <br>
+            <button onclick="downloadImage('canvas15', 'fluid-intelligence')">Download Image</button>
+        </div>
+
+        <div class="image-card">
+            <h3>Life Design Mastery</h3>
+            <canvas id="canvas16" width="800" height="600"></canvas>
+            <br>
+            <button onclick="downloadImage('canvas16', 'life-design-mastery')">Download Image</button>
+        </div>
+
+        <div class="image-card">
+            <h3>API-to-MCP Transformation</h3>
+            <canvas id="canvas17" width="800" height="600"></canvas>
+            <br>
+            <button onclick="downloadImage('canvas17', 'api-to-mcp-transformation')">Download Image</button>
+        </div>
+
+        <div class="image-card">
+            <h3>AI Coding Productivity</h3>
+            <canvas id="canvas18" width="800" height="600"></canvas>
+            <br>
+            <button onclick="downloadImage('canvas18', 'ai-coding-productivity')">Download Image</button>
+        </div>
+
+        <div class="image-card">
+            <h3>Economic Cycles</h3>
+            <canvas id="canvas19" width="800" height="600"></canvas>
+            <br>
+            <button onclick="downloadImage('canvas19', 'economic-cycles')">Download Image</button>
+        </div>
+
+        <div class="image-card">
+            <h3>Election Integrity</h3>
+            <canvas id="canvas20" width="800" height="600"></canvas>
+            <br>
+            <button onclick="downloadImage('canvas20', 'election-integrity')">Download Image</button>
+        </div>
+    </div>
+
+    <script>
+        const imageData = [
+            { id: 'canvas1', title: 'The Curator\'s Gambit', category: 'STRATEGY', color: '#2563eb' },
+            { id: 'canvas2', title: 'From Biomedical Engineering to Public Service', category: 'STRATEGY', color: '#dc2626' },
+            { id: 'canvas3', title: 'My Key Takeaways from Atlanta Conversation', category: 'STRATEGY', color: '#dc2626' },
+            { id: 'canvas4', title: 'THE PEACH VALUES FRAMEWORK', category: 'OPERATIONS', color: '#8b7d3a' },
+            { id: 'canvas5', title: 'The Deep Work Day Framework', category: 'OPERATIONS', color: '#4a5568' },
+            { id: 'canvas6', title: 'What H-1B Policy Changes Tell Us', category: 'OPERATIONS', color: '#059669' },
+            { id: 'canvas7', title: 'What lenders can learn from August\'s labor market', category: 'GROWTH', color: '#64748b' },
+            { id: 'canvas8', title: 'THE MIDDLE CLASS MIRAGE', category: 'GROWTH', color: '#64748b' },
+            { id: 'canvas9', title: 'The Hidden Depth of China\'s Deflationary Crisis', category: 'GROWTH', color: '#dc4446' },
+            { id: 'canvas10', title: 'The Quantum-AI Convergence', category: 'AI', color: '#6366f1' },
+            { id: 'canvas11', title: 'Rethinking AI Agent Architecture', category: 'AI', color: '#6366f1' },
+            { id: 'canvas12', title: 'AI SEARCH OPTIMIZATION', category: 'AI', color: '#6366f1' },
+            { id: 'canvas13', title: 'PRIVATE CREDIT DEMOCRATIZATION', category: 'GROWTH', color: '#64748b' },
+            { id: 'canvas14', title: 'THE GODFATHER OF AI\'S WARNING', category: 'AI', color: '#6366f1' },
+            { id: 'canvas15', title: 'FLUID INTELLIGENCE', category: 'AI', color: '#6366f1' },
+            { id: 'canvas16', title: 'LIFE DESIGN MASTERY', category: 'STRATEGY', color: '#dc2626' },
+            { id: 'canvas17', title: 'API-TO-MCP TRANSFORMATION', category: 'AI', color: '#6366f1' },
+            { id: 'canvas18', title: 'AI CODING PRODUCTIVITY', category: 'AI', color: '#6366f1' },
+            { id: 'canvas19', title: 'ECONOMIC CYCLES', category: 'GROWTH', color: '#64748b' },
+            { id: 'canvas20', title: 'ELECTION INTEGRITY', category: 'STRATEGY', color: '#dc2626' }
+        ];
+
+        function createImage(canvasId, data) {
+            const canvas = document.getElementById(canvasId);
+            const ctx = canvas.getContext('2d');
+            
+            // Create gradient background
+            const gradient = ctx.createLinearGradient(135, data.color, 0, '#1a1a1a', 1, '#1a1a1a');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, 800, 600);
+            
+            // Add category text
+            ctx.fillStyle = '#ffffff';
+            ctx.font = 'bold 48px Arial';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText(data.category, 400, 300);
+            
+            // Add title text (wrapped)
+            ctx.font = 'bold 24px Arial';
+            ctx.fillStyle = '#ffffff';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            
+            const words = data.title.split(' ');
+            let line = '';
+            let y = 400;
+            const maxWidth = 700;
+            
+            for (let i = 0; i < words.length; i++) {
+                const testLine = line + ' ' + words[i];
+                const metrics = ctx.measureText(testLine);
+                
+                if (metrics.width > maxWidth && i > 0) {
+                    ctx.fillText(line, 400, y);
+                    line = words[i];
+                    y += 40;
+                } else if (i === words.length - 1) {
+                    ctx.fillText(testLine, 400, y);
+                } else {
+                    line = testLine;
+                }
+            }
+        }
+
+        function downloadImage(canvasId, filename) {
+            const canvas = document.getElementById(canvasId);
+            canvas.toBlob(function(blob) {
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = filename + '.jpg';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+            }, 'image/jpeg', 0.9);
+        }
+
+        // Generate all images when page loads
+        window.onload = function() {
+            imageData.forEach(data => {
+                createImage(data.id, data);
+            });
+        };
+    </script>
+</body>
+</html>
